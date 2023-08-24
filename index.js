@@ -54,14 +54,14 @@ const projectItems = [{
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Todo App',
-    photo: 'images/todo.png',
+    photo: 'todo.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: " https://jmelgar1014.github.io/todo-app/",
     gitLink: 'https://github.com/Jmelgar1014/todo-app',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Personal Website V3',
-    photo: 'images/v3.png',
+    photo: 'v3.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: " https://jmelgar1014.github.io/PortfolioV3/",
     gitLink: 'https://github.com/Jmelgar1014/PortfolioV3',
