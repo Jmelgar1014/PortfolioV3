@@ -26,42 +26,42 @@ hamburger.addEventListener('click',()=>{
 
 const projectItems = [{
     name: 'Personal Website V1',
-    photo: './images/Personal Website V1.jpg',
+    photo: 'images/Personal Website V1.jpg',
     Stack: 'HTML,CSS',
     webLink: 'https://jmelgar1014.github.io/First-Website/',
     gitLink: 'https://github.com/Jmelgar1014/First-Website',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{
     name: 'Personal Website V2',
-    photo: './images/Personal Website V2.jpg',
+    photo: 'images/Personal Website V2.jpg',
     Stack: 'HTML,Bootstrap',
     webLink: 'https://jmelgar1014.github.io/Personal-Site-V2/',
     gitLink: 'https://github.com/Jmelgar1014/Personal-Site-V2',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Currency Exchange',
-    photo: './images/currency.png',
+    photo: 'images/currency.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: "https://jmelgar1014.github.io/exchange-rate/",
     gitLink: 'https://github.com/Jmelgar1014/exchange-rate',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Weather App',
-    photo: './images/weather2.png',
+    photo: 'images/weather2.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: "https://jmelgar1014.github.io/weather-app/",
     gitLink: 'https://github.com/Jmelgar1014/weather-app',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Todo App',
-    photo: './images/todo.png',
+    photo: 'images/todo.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: " https://jmelgar1014.github.io/todo-app/",
     gitLink: 'https://github.com/Jmelgar1014/todo-app',
     Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
 },{    
     name: 'Personal Website V3',
-    photo: './images/v3.png',
+    photo: 'images/v3.png',
     Stack: 'HTML,CSS,Javascript',
     webLink: " https://jmelgar1014.github.io/PortfolioV3/",
     gitLink: 'https://github.com/Jmelgar1014/PortfolioV3',
