@@ -25,6 +25,13 @@ hamburger.addEventListener('click',()=>{
 })
 
 const projectItems = [{
+    name: 'Movie and Tv Search',
+    photo: 'images/movieproject.png',
+    Stack: 'HTML,CSS',
+    webLink: ' https://jmelgar1014.github.io/Entertainment-Search/',
+    gitLink: 'https://github.com/Jmelgar1014/Entertainment-Search',
+    Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
+},{
     name: 'Personal Website V1',
     photo: 'images/Personal Website V1.jpg',
     Stack: 'HTML,CSS',
