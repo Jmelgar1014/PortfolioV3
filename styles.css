@@ -16,7 +16,7 @@ html {
 html,body{
     font-size: 62.5%;
     font-family: Inter;
-    height: 100vh;
+    height: 100%;
 
 }
 body{
@@ -28,27 +28,34 @@ body{
 
 
 .navigation-desk{
+    height: 8rem;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 50;
+    z-index: 5;
 
 
 }
+
+.list-desk-container {
+    height: 8rem;
+}
 .list-desk{
-    display: block;
-    height: 5.1rem;
+    
+    display: flex;
+    height: 8rem;
+    align-items: center;
     border-bottom: 1px solid var(--color-accent);
-    height: 6rem;
     padding: 1rem;
     background: var(--color-back);
+    margin-bottom: 5rem;
  
 }
 ul{
     margin: 0;
 }
 
-h1 {
+.heading,.home-heading{
     margin-right: 6rem;
     font-size: 2.5rem;
     display: inline;
@@ -66,12 +73,13 @@ li{
     font-size: 2.5rem;
     margin-right: 2.5rem;
     display: none;
+    color: var(--color-text)
 
 }
-a:visited{
+.items-desk:visited{
     color: var(--color-text);
 }
-a:hover{
+.items-desk:hover{
     cursor: pointer;
     color: var(--color-accent);
 
@@ -155,7 +163,7 @@ i {
 
 .project-container{
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 5rem;
     display: grid;
     gap: 1rem;
 
@@ -223,7 +231,7 @@ h2{
   }
 
 @media (min-width: 1000px) {
-.project-container { grid-template-columns: repeat(3, 1fr); }
+.project-container { grid-template-columns: repeat(4, 1fr); }
 }
 
 @media (max-width: 390px){
@@ -269,11 +277,7 @@ h2{
 
 /*Home*/
 
-.home{
-    margin-top: 20rem;
-    height: 100vh;
 
-}
 
 .home-heading{
     text-align: center;
@@ -282,23 +286,25 @@ h2{
     font-size: 4rem;
 }
 .home-inner {
-    margin-top: 9rem;
+    display: flex;
+    align-items: center;
     margin-bottom: 5rem;
-    height: 100vh;
+    height: 100%;
+
 }
 .name{
     color: var(--color-accent);
 }
-.home-inner > h2{
+.home-text > h2{
     font-size: 2.5rem;
 }
-.home-inner > h2,p{
+.home-text > h2,p{
     color: var(--color-text);
     text-align: center;
 
 }
 
-.home-inner > p {
+.home-text  > p {
     font-size: 2rem;
     margin: 0 30rem;
     line-height: 3.5rem;
@@ -326,6 +332,31 @@ h2{
     .list-mobile {
         margin-top: 9rem;
     }
+}
+
+.skills{
+    margin-top: 9rem;
+}
+.skillIcons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+}
+.skillIcons img {
+    height: 8rem;
+    width: 8rem;
+    padding: 1rem;
+    background: rgba(201, 198, 198, 0.1);
+    border-radius: 5px;
+    margin: 3rem 0;
+}
+
+.skilltitle > h1{
+    color: var(--color-text);
+    font-size: 6rem;
+    display: block;
+    margin-left: 25rem;
+    box-shadow: 60px var(--accent);
 }
 
 
