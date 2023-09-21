@@ -32,7 +32,7 @@ body{
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 5;
+    z-index: 11;
 
 
 }
@@ -87,37 +87,55 @@ li{
 
 
 .mobile-container{
-    display: none;
+    z-index: 11;
+    position: fixed;
+    left: 75rem;
+    width: 180px;
+    height: 168px;
+    transition: all 0.2s linear;
 
 }
+
 .list-mobile{
     display:flex;
     flex-direction: column;
-    height: 100vh;
-    background:var(--color-back);
-    padding: 0;
-
-
+    padding: 1rem;
+    background-color: var(--color-back);
+    border-radius: 5px;
 
 }
+.active{
+    left: 50rem;
+}
+.blurry{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #2b2a39b3;
+    backdrop-filter: blur(5px);
+    display: none;
+}
 
-
+i:hover{
+    cursor: pointer;
+}
 .items-mobile {
     text-decoration: none;
     font-size: 3rem;
-    margin: 1rem 0;
-    max-width: 20rem;
-    display:block;
-    text-align: center;
-    margin: 0 auto 1.6rem;
-    padding: 1.2rem 1.6rem;
+    margin: .5rem 0;
+    width: 100%;
+    padding-left: 1rem;
     border-radius: 5px;
-    background: var(--color-accent);
+    background: rgba(201, 193, 193, 0.2);
+    color: var(--color-text);
 
 }
 
 .items-mobile:hover {
-    color: var(--color-back);
+    background-color: var(--color-accent);
 }
 .icon{
     display: inline;
@@ -310,6 +328,18 @@ h2{
     line-height: 3.5rem;
 }
 
+@media (max-width:780px) {
+    .home-text > p {
+        margin: 0 2rem;
+    }
+    .project-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .list-desk{
+        justify-content: space-between;
+    }
+    
+}
 
 @media (min-width: 390px) and (max-width: 768px) {
     .home-inner > p {
@@ -329,9 +359,7 @@ h2{
         margin-top: 9rem;
         height: 100vh;
     }
-    .list-mobile {
-        margin-top: 9rem;
-    }
+
 }
 
 .skills{

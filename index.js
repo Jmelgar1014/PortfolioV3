@@ -1,27 +1,46 @@
 const hamburger = document.querySelector('i');
 const mobile = document.querySelector('.mobile-container');
 const projects = document.querySelector('.container');
-
+const blur = document.querySelector('.blurry');
+const sections = document.querySelectorAll('.items-mobile')
 const main = document.querySelector('.home');
 
 hamburger.addEventListener('click',()=>{
-    const removeHam = document.querySelector('i');
-    if(removeHam.classList.contains('active')){
-        removeHam.classList.remove('active','fa-solid','fa-x');
-        removeHam.classList.add('fa-solid','fa-bars', 'fa-4x')
-        mobile.style.display = 'none';
-        main.style.display = 'contents';
-        projects.style.display = 'contents';
+    const list = document.querySelector('.mobile-container')
+
+    list.classList.toggle('active');
+    if(list.classList.contains('active')){
+        hamburger.classList.remove('fa-bars');
+        hamburger.classList.add('fa-x');
+        blur.style.display = 'block';
 
 
-    }else{
-        removeHam.classList.add('active','fa-solid','fa-x');
-        projects.style.display = 'none';
-        main.style.display = 'none';
+    }
+    else {
+        hamburger.classList.add('fa-bars');
+        hamburger.classList.remove('fa-x')
+        blur.style.display = 'none';
 
-        mobile.style.display = 'contents';
     }
 
+
+})
+
+sections.forEach((item)=>{
+    item.addEventListener('click',()=>{
+        mobile.classList.remove('active');
+        blur.style.display = 'none';
+        hamburger.classList.add('fa-bars');
+        hamburger.classList.remove('fa-x');
+    })
+})
+document.addEventListener('click', (e)=>{
+    if(!mobile.contains(e.target) && e.target !== hamburger){
+        mobile.classList.remove('active');
+        blur.style.display = 'none';
+        hamburger.classList.add('fa-bars');
+        hamburger.classList.remove('fa-x');
+    }
 })
 
 const projectItems = [{
@@ -108,23 +127,3 @@ projectItems.forEach(item => {
 })
 
 
-const mobileHome = document.querySelectorAll('.items-mobile');
-
-
-
-mobileHome.forEach(item =>{
-    item.addEventListener('click', ()=>{
-        const removeHam = document.querySelector('i');
-        removeHam.classList.remove('fa-solid','fa-x','active');
-        mobile.style.display = 'none';
-        main.style.display = 'contents';
-        projects.style.display = 'contents';
-        removeHam.classList.add('fa-solid','fa-bars','active');
-        let locate = item.href;
-        console.log(locate);
-        let news = location.href = locate;
-  
-
-       
-    })
-})
