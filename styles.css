@@ -12,6 +12,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: var(--scroll-padding);
 }
 html,body{
     font-size: 62.5%;
@@ -21,7 +22,7 @@ html,body{
 }
 body{
     margin: 0;
-    background: var(--color-back);
+    background: #fff;
 }
 
 /*navigation*/
@@ -70,7 +71,7 @@ li{
 }
 
 .items-desk{
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-right: 2.5rem;
     display: none;
     color: var(--color-text)
@@ -150,7 +151,7 @@ i {
 }
 
 
-@media screen and (min-width: 768px){
+@media  (min-width: 768px){
     .items-desk{
         display: contents;
         
@@ -160,6 +161,9 @@ i {
         display: none;
     }
     .list-mobile{
+        display: none;
+    }
+    .blurry{
         display: none;
     }
     .icon{
@@ -175,17 +179,23 @@ i {
 
 /*Projects*/
 
+.container {
+    display: flex;
+    justify-content: center;
+}
+
 #pro{
     margin-top: 9rem;
-}
-
-.project-container{
-    max-width: 1200px;
     margin: 0 5rem;
     display: grid;
-    gap: 1rem;
-
+    gap: 8rem;
+    width: 60rem;
+    
 }
+
+
+
+
 
 img{
     height: 250px;
@@ -196,7 +206,9 @@ img{
     color: var(--color-text);
     padding: 1rem;
     height: 40rem;
-    border-radius: 5px;
+    border-radius: 10px;
+
+
 
 }
 
@@ -228,13 +240,12 @@ h2{
     color: white;
 }
 .gridItem > h2 {
-    color: var(--color-text)
+    color: var(--color-back)
 }
 
 .gridItem > img{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+
     height: 250px;
     width: 380px;
     border-radius: 5px;
@@ -245,11 +256,11 @@ h2{
     background-color: var(--color-back);
 }
 @media (min-width: 600px) {
-    .project-container { grid-template-columns: repeat(2, 1fr); }
+    .project-container { grid-template-columns: repeat(1, 1fr); }
   }
 
 @media (min-width: 1000px) {
-.project-container { grid-template-columns: repeat(4, 1fr); }
+.project-container { grid-template-columns: repeat(1, 1fr); }
 }
 
 @media (max-width: 390px){
@@ -308,6 +319,7 @@ h2{
     align-items: center;
     margin-bottom: 5rem;
     height: 100%;
+    background-color: var(--color-back);
 
 }
 .name{
@@ -367,8 +379,10 @@ h2{
 }
 .skillIcons{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(5,1fr);
     justify-items: center;
+
+
 }
 .skillIcons img {
     height: 8rem;
@@ -380,11 +394,62 @@ h2{
 }
 
 .skilltitle > h1{
-    color: var(--color-text);
+    color: var(--color-back);
     font-size: 6rem;
     display: block;
     margin-left: 25rem;
-    box-shadow: 60px var(--accent);
+
 }
 
 
+
+/*Hero cards*/
+
+
+.project-img, .project-desc {
+    display: inline;
+    margin: 2rem;
+
+    background: var(--color-secondary);
+    border-radius: 5px;
+
+}
+
+.project-img > img{
+    border-radius: 5px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#web, #git {
+    width: 13rem;
+    font-size: 2rem;
+    margin: 0rem 3rem;
+    text-align: center;
+    padding: .5rem 0;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--color-secondary);
+    outline: 1.5px solid #fff;
+    outline-offset: -5px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+#web:hover, #git:hover {
+    background-color: var(--color-accent);
+
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-around;
+}

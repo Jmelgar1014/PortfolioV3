@@ -1,9 +1,11 @@
 const hamburger = document.querySelector('i');
 const mobile = document.querySelector('.mobile-container');
 const projects = document.querySelector('.container');
-const blur = document.querySelector('.blurry');
+const blurry = document.querySelector('.blurry');
 const sections = document.querySelectorAll('.items-mobile')
 const main = document.querySelector('.home');
+const navHeight = document.querySelector('.navigation-desk').offsetHeight;
+document.documentElement.style.setProperty('--scroll-padding',navHeight - 1 + 'px');
 
 hamburger.addEventListener('click',()=>{
     const list = document.querySelector('.mobile-container')
@@ -12,24 +14,36 @@ hamburger.addEventListener('click',()=>{
     if(list.classList.contains('active')){
         hamburger.classList.remove('fa-bars');
         hamburger.classList.add('fa-x');
-        blur.style.display = 'block';
+        blurry.style.display = 'block';
 
 
     }
     else {
         hamburger.classList.add('fa-bars');
         hamburger.classList.remove('fa-x')
-        blur.style.display = 'none';
+        blurry.style.display = 'none';
 
     }
 
 
 })
 
+const windowWidth = () =>{
+    const ham = document.querySelector('i');
+    const mob= document.querySelector('.mobile-container');
+    const blurr = document.querySelector('.blurry');
+    if(ham.classList.contains('active') && window.innerWidth >= 800){
+        mob.style.display = 'none';
+        blurr.style.display = 'none';
+    }
+}
+windowWidth();
+
+
 sections.forEach((item)=>{
     item.addEventListener('click',()=>{
         mobile.classList.remove('active');
-        blur.style.display = 'none';
+        blurry.style.display = 'none';
         hamburger.classList.add('fa-bars');
         hamburger.classList.remove('fa-x');
     })
@@ -37,7 +51,7 @@ sections.forEach((item)=>{
 document.addEventListener('click', (e)=>{
     if(!mobile.contains(e.target) && e.target !== hamburger){
         mobile.classList.remove('active');
-        blur.style.display = 'none';
+        blurry.style.display = 'none';
         hamburger.classList.add('fa-bars');
         hamburger.classList.remove('fa-x');
     }
@@ -49,7 +63,7 @@ const projectItems = [{
     Stack: 'HTML,CSS',
     webLink: ' https://jmelgar1014.github.io/Entertainment-Search/',
     gitLink: 'https://github.com/Jmelgar1014/Entertainment-Search',
-    Description: 'Used HTML and CSS to create the google homepage to familiarize myself with how to create navigation bars and an input box.'
+    Description: 'Used the "The Movie Database" API, to create a website to be able to search for movies and tv shows. '
 },{
     name: 'Personal Website V1',
     photo: 'images/Personal Website V1.jpg',
@@ -95,34 +109,24 @@ const projectItems = [{
 }]
 
 const contain = document.getElementById('pro');
+let html = '';
 projectItems.forEach(item => {
-    const newItem = document. createElement('div');
-    newItem.classList.add('gridItem');
-    const gitBtn = document.createElement('a');
-    const webBtn = document.createElement('a');
-    gitBtn.setAttribute('id','git');
-    webBtn.setAttribute('id','web');
-    console.log(item.gitLink);
-    console.log(item.webLink);
-    gitBtn.href = item.gitLink;
-    webBtn.href = item.webLink;
+    html += `
+        <div class="gridItem">
+            <h2>${item.name}</h2>
+            <div class="hero-container">
+                <div class="project-img">
+                    <img src="${item.photo}">
+                </div>
+                <div class="project-links">
+                    <button id="web"><a  href="${item.webLink}">Website</a></button>
+                    <button id="git"><a  href="${item.gitLink}">Github</a></button>
+                </div>
+            </div>
 
-    const gitText = document.createTextNode('Github');
-    const webText = document.createTextNode('Website');
-    const projectImage = document.createElement('img');
-    gitBtn.appendChild(gitText);
-    webBtn.appendChild(webText);
-    projectImage.src = item.photo;
-    const textItem = document.createElement('h2');
-    const info = item.name;
-    const list = document.createTextNode(info);
-    contain.appendChild(newItem);
-    textItem.appendChild(list);
-    newItem.appendChild(textItem);
-    newItem.appendChild(projectImage);
-    newItem.appendChild(webBtn);
-    newItem.appendChild(gitBtn);
-    
+        </div>
+    `
+    contain.innerHTML = html;
 
 })
 
